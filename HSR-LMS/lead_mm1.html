@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Listing</title>
+    <link rel="stylesheet" href="/lead-listing.css">
+    <script src="/lead-listing.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Lead Management System</h1>
+            <nav>
+                <ul>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Dashboard</a>
+                        <div class="dropdown-content">
+                            <a href="lead-listing.html">Lead Listing</a>
+                            <a href="lead-details.html">Lead Details</a>
+                            <a href="lead-management.html">Lead Management</a>
+                        </div>
+                    </li>
+                    <li><a href="lead-listing.html" class="active">Lead Listing</a></li>
+                    <li><a href="lead-details.html">Lead Details</a></li>
+                    <li><a href="lead-management.html">Lead Management</a></li>
+                    <li><a href="#" id="filter-icon"></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section id="add-lead" class="card">
+                <h2>Add New Lead</h2>
+                <form id="lead-form">
+                    <div class="form-group">
+                        <label for="lead-name">Name:</label>
+                        <input type="text" id="lead-name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lead-contact">Contact:</label>
+                        <input type="text" id="lead-contact" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lead-status">Status:</label>
+                        <select id="lead-status" required>
+                            <option value="New">New</option>
+                            <option value="Contacted">Contacted</option>
+                            <option value="Not Interested">Not Interested</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lead-source">Source:</label>
+                        <input type="text" id="lead-source" required>
+                    </div>
+
+                    <button type="submit" class="btn">Add Lead</button>
+                </form>
+            </section>
+
+            <section id="lead-list" class="card">
+                <h2>Leads</h2>
+                <div id="filter-options">
+                    <label for="filter-status">Status:</label>
+                    <select id="filter-status">
+                        <option value="">All</option>
+                        <option value="New">New</option>
+                        <option value="Contacted">Contacted</option>
+                        <option value="Not Interested">Not Interested</option>
+                    </select>
+
+                    <label for="filter-source">Source:</label>
+                    <input type="text" id="filter-source" placeholder="Search Source">
+                    <button id="apply-filter">Apply Filter</button>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Lead ID</th>
+                            <th>Name</th>
+                            <th>Contact</th>
+                            <th>Status</th>
+                            <th>Source</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lead-table-body">
+                        <!-- Lead rows will be dynamically populated here -->
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </main>
+
+</body>
+</html>
